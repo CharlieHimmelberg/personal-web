@@ -22,17 +22,18 @@
       .page-shell {
         max-width: 1200px;
         margin: 0 auto;
-        display: flex;
-        align-items: center;
-        gap: var(--page-gap);
+        display: block;
       }
 
       .page-copy {
-        flex: 0 0 180px;
+        margin-bottom: 0.75rem;
+      }
+
+      .page-copy p {
+        margin: 0;
       }
 
       .app-frame {
-        flex: 1 1 auto;
         width: min(100%, calc((100vh - 6rem) * 1.5));
         max-width: 100%;
         min-height: 420px;
@@ -68,7 +69,8 @@
         }
 
         .page-copy {
-          display: none;
+          display: block;
+          margin-bottom: 0.5rem;
         }
 
         .app-frame {
