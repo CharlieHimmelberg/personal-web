@@ -5,15 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
     <style>
+      :root {
+        --page-gap: 1rem;
+      }
+
       body {
         font-family: Arial, sans-serif;
         margin: 2rem;
         line-height: 1.5;
       }
 
+      .page-shell {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: var(--page-gap);
+      }
+
+      .page-copy {
+        flex: 0 0 180px;
+      }
+
       .app-frame {
+        flex: 1 1 auto;
         width: min(100%, calc((100vh - 6rem) * 1.5));
         max-width: 100%;
+        min-height: 420px;
+        height: min(66vh, 780px);
         margin: 0 auto;
         aspect-ratio: 1.5 / 1;
       }
@@ -24,25 +43,51 @@
         height: 100%;
         border: none;
         border-radius: 12px;
-        margin-top: 1rem;
       }
 
       a {
         display: inline-block;
         margin-top: 1rem;
       }
+
+      @media (max-width: 760px) {
+        body {
+          margin: 0.75rem;
+        }
+
+        .page-shell {
+          display: flex;
+          align-items: stretch;
+          gap: 0.75rem;
+        }
+
+        .page-copy {
+          flex: 0 0 120px;
+        }
+
+        .app-frame {
+          flex: 1 1 auto;
+          width: 100%;
+          max-width: none;
+          min-height: 320px;
+          height: 66vh;
+          aspect-ratio: 16 / 9;
+        }
+      }
     </style>
   </head>
   <body>
-    <!-- <h1>My personal webpage</h1> -->
+    <div class="page-shell">
+      <div class="page-copy">
+        <p>Here is the demo app:</p>
+      </div>
 
-    <p>Here is the demo app:</p>
-
-    <div class="app-frame">
-      <iframe
-        src="https://019eaf4f-7097-0a2b-8a97-1d84621d0ba2.share.connect.posit.cloud/"
-        title="Demo app">
-      </iframe>
+      <div class="app-frame">
+        <iframe
+          src="https://019eaf4f-7097-0a2b-8a97-1d84621d0ba2.share.connect.posit.cloud/"
+          title="Demo app">
+        </iframe>
+      </div>
     </div>
 
     <p>
